@@ -1,0 +1,14 @@
+{
+  "name": "talk-a-tive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "author": "Aman Sharma",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
