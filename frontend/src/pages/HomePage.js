@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SignUp from "../components/Authentication/SignUp";
 import Login from "../components/Authentication/Login";
 import { Container, Box, Text, Tabs, Tab, TabList, TabPanel, TabPanels } from "@chakra-ui/react";
+import { Navigate } from "react-router-dom";
 
 const HomePage = () => {
+
+  const [redirect, setRedirect] = useState(false);
+
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userInfo"));
+    if(user){
+      setRedirect(true);
+    }
+  }, []);
+  if(redirect){
+    return <Navigate to="/chats"/>
+  }
   return (
     <Container maxW="xl" centerContent>
       <Box
